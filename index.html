@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tenis Match Tracker</title>
+<title title="Aplicatie Tenis">Tenis Match Tracker</title>
 </head>
 
-<body bgcolor="#ccffcc">
+<body bgcolor="#e8f5e9">
 
 <center>
-<h1 title="Aplicatie tenis">Tenis Match Tracker</h1>
-<h3>Aplicație pentru urmărirea meciurilor de tenis</h3>
+<h1 title="Tenis App">🎾 Tenis Match Tracker</h1>
+<h3>Aplicație web pentru urmărirea meciurilor</h3>
 <h5>Laborator Web</h5>
 </center>
 
+<div align="center">
+
 <p>
-Această aplicație web permite utilizatorilor să urmărească <strong>meciuri de tenis</strong>,
-să adauge <b>scoruri</b> și să vadă statistici despre jucători. <br>
+Această aplicație permite utilizatorilor să urmărească <strong>meciuri de tenis</strong>,
+să adauge <b>scoruri</b> și să analizeze statistici despre jucători.
+<br>
 Scopul aplicației este să ajute fanii tenisului să urmărească turneele preferate.
+<span title="informatie">Platformă demo pentru laborator</span>
 </p>
+
+</div>
+
+<hr width="70%">
 
 <div align="center">
 
-<h2>Funcționalități</h2>
+<h2>Funcționalități aplicație</h2>
 
 <ul>
 <li>Vizualizare jucători</li>
 <li>Adăugare meciuri</li>
-<li>Statistici despre scor</li>
+<li>Statistici scor</li>
 </ul>
 
 <h3>Pași pentru utilizare</h3>
@@ -38,19 +46,24 @@ Scopul aplicației este să ajute fanii tenisului să urmărească turneele pref
 
 </div>
 
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
-width="300"
-height="200"
-alt="tenis"
-title="Racheta tenis">
-</center>
-
 <br>
 
-<h2 align="center">Tabel meciuri</h2>
+<center>
+<img 
+src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
+width="350"
+height="220"
+alt="tenis"
+title="Racheta de tenis">
+</center>
 
-<table border="2" width="600" align="center" bgcolor="#ffffff">
+<br><br>
+
+<center>
+<h2>Tabel meciuri</h2>
+
+<table border="2" width="500" bgcolor="white">
+
 <tr>
 <th>Jucător</th>
 <th>Adversar</th>
@@ -70,57 +83,88 @@ title="Racheta tenis">
 <td align="center">7</td>
 <td align="center">5</td>
 </tr>
-</table>
 
-<br>
+</table>
+</center>
+
+<br><br>
 
 <center>
 <h2>Formular introducere meci</h2>
 </center>
 
-<form name="tenisForm">
+<form name="tenisForm" align="center">
 
 <fieldset>
+
 <legend>Adaugă meci nou</legend>
 
 <p>
 Nume jucător:
-<input type="text" name="player" size="20" maxlength="30" value="Introduce nume">
+<input 
+type="text" 
+name="player"
+size="20"
+maxlength="30"
+value="Introduce nume">
 </p>
 
 <p>
 Adversar:
-<input type="text" name="opponent" size="20" maxlength="30">
+<input 
+type="text"
+name="opponent"
+size="20"
+maxlength="30">
 </p>
 
 <p>
 Turneu:
 <select name="turneu">
+
 <option value="atp">ATP</option>
 <option value="wimbledon" selected>Wimbledon</option>
 <option value="usopen">US Open</option>
+
 </select>
 </p>
 
 <p>
 Suprafață teren:
+
 <select name="teren" multiple size="3">
+
 <option value="zgura">Zgură</option>
 <option value="iarba">Iarbă</option>
 <option value="hard">Hard</option>
+
 </select>
+
 </p>
 
 <p>
-Set 1:
-<input type="number" max="7" step="1" value="0">
+Set 1 scor:
+
+<input 
+type="number"
+value="0"
+max="7"
+step="1">
 </p>
 
 <p>
-Comentarii:
-<textarea name="comentarii" cols="40" rows="4">
-Scrie aici detalii despre meci
+Comentarii despre meci:
+<br>
+
+<textarea 
+name="comentarii"
+cols="40"
+rows="4">
+
+Scrie detalii despre meci
+
 </textarea>
+
 </p>
 
 <p>
@@ -128,32 +172,36 @@ Scrie aici detalii despre meci
 </p>
 
 <p>
-<input type="text" value="Doar citire" readonly>
+<input type="text" value="Camp doar citire" readonly>
 </p>
 
 <p>
-<input type="text" value="Indisponibil" disabled>
+<input type="text" value="Camp dezactivat" disabled>
 </p>
 
 <p>
-<input type="submit" value="Salvează">
+<input type="submit" value="Salvează meci">
 </p>
 
 </fieldset>
 
 </form>
 
-<br>
+<br><br>
 
 <center>
-<a href="https://www.atptour.com" href="#" target="_blank" name="linkATP" title="Site ATP">
-Vezi clasamentul ATP
-</a>
-</center>
 
-<p align="center">
-<span title="informatie">Aplicație demo pentru laborator HTML</span>
-</p>
+<a 
+href="https://www.atptour.com"
+target="_blank"
+name="linkATP"
+title="Clasament ATP">
+
+Vezi clasamentul oficial ATP
+
+</a>
+
+</center>
 
 </body>
 </html>
