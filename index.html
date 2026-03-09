@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title title="Aplicatie Tenis">Tenis Match Tracker</title>
+
+<style>
+
+body{
+background-image:url("https://images.unsplash.com/photo-1542144582-1ba00456b5e3");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+font-family:Arial;
+}
+
+.overlay{
+background-color:rgba(255,255,255,0.9);
+width:80%;
+margin:auto;
+padding:30px;
+}
+
+table{
+background:white;
+}
+
+</style>
+
 </head>
 
-<body bgcolor="#e8f5e9">
+<body>
+
+<div class="overlay">
 
 <center>
-<h1 title="Tenis App">🎾 Tenis Match Tracker</h1>
-<h3>Aplicație web pentru urmărirea meciurilor</h3>
+
+<h1 title="Aplicatie tenis">🎾 Tenis Match Tracker</h1>
+<h3>Aplicație pentru urmărirea meciurilor de tenis</h3>
 <h5>Laborator Web</h5>
+
 </center>
 
-<div align="center">
-
 <p>
-Această aplicație permite utilizatorilor să urmărească <strong>meciuri de tenis</strong>,
-să adauge <b>scoruri</b> și să analizeze statistici despre jucători.
+
+Această aplicație web permite utilizatorilor să urmărească
+<strong>meciuri de tenis</strong>,
+să adauge <b>scoruri</b> și să vadă statistici despre jucători.
 <br>
+
 Scopul aplicației este să ajute fanii tenisului să urmărească turneele preferate.
+
 <span title="informatie">Platformă demo pentru laborator</span>
+
 </p>
 
-</div>
-
-<hr width="70%">
-
 <div align="center">
 
-<h2>Funcționalități aplicație</h2>
+<h2>Funcționalități</h2>
 
 <ul>
+
 <li>Vizualizare jucători</li>
 <li>Adăugare meciuri</li>
 <li>Statistici scor</li>
+
 </ul>
 
 <h3>Pași pentru utilizare</h3>
 
 <ol start="1">
+
 <li>Adaugă jucătorii</li>
 <li>Introdu scorul meciului</li>
 <li>Salvează rezultatul</li>
+
 </ol>
 
 </div>
@@ -49,77 +82,97 @@ Scopul aplicației este să ajute fanii tenisului să urmărească turneele pref
 <br>
 
 <center>
-<img 
+
+<img
 src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
 width="350"
 height="220"
 alt="tenis"
-title="Racheta de tenis">
+title="Racheta tenis">
+
 </center>
 
 <br><br>
 
 <center>
+
 <h2>Tabel meciuri</h2>
 
 <table border="2" width="500" bgcolor="white">
 
 <tr>
+
 <th>Jucător</th>
 <th>Adversar</th>
 <th colspan="2">Scor</th>
+
 </tr>
 
 <tr>
+
 <td align="center" valign="middle">Nadal</td>
 <td align="center">Djokovic</td>
 <td align="center">6</td>
 <td align="center">4</td>
+
 </tr>
 
 <tr>
+
 <td align="center">Alcaraz</td>
 <td align="center">Medvedev</td>
 <td align="center">7</td>
 <td align="center">5</td>
+
 </tr>
 
 </table>
+
 </center>
 
 <br><br>
 
 <center>
+
 <h2>Formular introducere meci</h2>
+
 </center>
 
-<form name="tenisForm" align="center">
+<form name="tenisForm">
 
 <fieldset>
 
-<legend>Adaugă meci nou</legend>
+<legend align="center">Adaugă meci nou</legend>
 
 <p>
+
 Nume jucător:
-<input 
-type="text" 
+
+<input
+type="text"
 name="player"
 size="20"
 maxlength="30"
 value="Introduce nume">
+
 </p>
 
 <p>
+
 Adversar:
-<input 
+
+<input
 type="text"
 name="opponent"
 size="20"
 maxlength="30">
+
 </p>
 
 <p>
+
 Turneu:
+
 <select name="turneu">
 
 <option value="atp">ATP</option>
@@ -127,9 +180,11 @@ Turneu:
 <option value="usopen">US Open</option>
 
 </select>
+
 </p>
 
 <p>
+
 Suprafață teren:
 
 <select name="teren" multiple size="3">
@@ -143,20 +198,24 @@ Suprafață teren:
 </p>
 
 <p>
+
 Set 1 scor:
 
-<input 
+<input
 type="number"
 value="0"
 max="7"
 step="1">
+
 </p>
 
 <p>
+
 Comentarii despre meci:
+
 <br>
 
-<textarea 
+<textarea
 name="comentarii"
 cols="40"
 rows="4">
@@ -168,19 +227,36 @@ Scrie detalii despre meci
 </p>
 
 <p>
+
 <input type="checkbox" checked> Meci finalizat
+
 </p>
 
 <p>
-<input type="text" value="Camp doar citire" readonly>
+
+<input
+type="text"
+value="Camp doar citire"
+readonly>
+
 </p>
 
 <p>
-<input type="text" value="Camp dezactivat" disabled>
+
+<input
+type="text"
+value="Camp dezactivat"
+disabled>
+
 </p>
 
 <p>
-<input type="submit" value="Salvează meci">
+
+<input
+type="button"
+value="Salvează meci"
+onclick="alert('Meci salvat cu succes!')">
+
 </p>
 
 </fieldset>
@@ -191,7 +267,7 @@ Scrie detalii despre meci
 
 <center>
 
-<a 
+<a
 href="https://www.atptour.com"
 target="_blank"
 name="linkATP"
@@ -203,5 +279,8 @@ Vezi clasamentul oficial ATP
 
 </center>
 
+</div>
+
 </body>
+
 </html>
