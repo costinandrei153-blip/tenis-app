@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tenis Match Tracker</title>
+</head>
+
+<body bgcolor="#ccffcc">
+
+<center>
+<h1 title="Aplicatie tenis">Tenis Match Tracker</h1>
+<h3>Aplicație pentru urmărirea meciurilor de tenis</h3>
+<h5>Laborator Web</h5>
+</center>
+
+<p>
+Această aplicație web permite utilizatorilor să urmărească <strong>meciuri de tenis</strong>,
+să adauge <b>scoruri</b> și să vadă statistici despre jucători. <br>
+Scopul aplicației este să ajute fanii tenisului să urmărească turneele preferate.
+</p>
+
+<div align="center">
+
+<h2>Funcționalități</h2>
+
+<ul>
+<li>Vizualizare jucători</li>
+<li>Adăugare meciuri</li>
+<li>Statistici despre scor</li>
+</ul>
+
+<h3>Pași pentru utilizare</h3>
+
+<ol start="1">
+<li>Adaugă jucătorii</li>
+<li>Introdu scorul meciului</li>
+<li>Salvează rezultatul</li>
+</ol>
+
+</div>
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
+width="300"
+height="200"
+alt="tenis"
+title="Racheta tenis">
+</center>
+
+<br>
+
+<h2 align="center">Tabel meciuri</h2>
+
+<table border="2" width="600" align="center" bgcolor="#ffffff">
+<tr>
+<th>Jucător</th>
+<th>Adversar</th>
+<th colspan="2">Scor</th>
+</tr>
+
+<tr>
+<td align="center" valign="middle">Nadal</td>
+<td align="center">Djokovic</td>
+<td align="center">6</td>
+<td align="center">4</td>
+</tr>
+
+<tr>
+<td align="center">Alcaraz</td>
+<td align="center">Medvedev</td>
+<td align="center">7</td>
+<td align="center">5</td>
+</tr>
+</table>
+
+<br>
+
+<center>
+<h2>Formular introducere meci</h2>
+</center>
+
+<form name="tenisForm">
+
+<fieldset>
+<legend>Adaugă meci nou</legend>
+
+<p>
+Nume jucător:
+<input type="text" name="player" size="20" maxlength="30" value="Introduce nume">
+</p>
+
+<p>
+Adversar:
+<input type="text" name="opponent" size="20" maxlength="30">
+</p>
+
+<p>
+Turneu:
+<select name="turneu">
+<option value="atp">ATP</option>
+<option value="wimbledon" selected>Wimbledon</option>
+<option value="usopen">US Open</option>
+</select>
+</p>
+
+<p>
+Suprafață teren:
+<select name="teren" multiple size="3">
+<option value="zgura">Zgură</option>
+<option value="iarba">Iarbă</option>
+<option value="hard">Hard</option>
+</select>
+</p>
+
+<p>
+Set 1:
+<input type="number" max="7" step="1" value="0">
+</p>
+
+<p>
+Comentarii:
+<textarea name="comentarii" cols="40" rows="4">
+Scrie aici detalii despre meci
+</textarea>
+</p>
+
+<p>
+<input type="checkbox" checked> Meci finalizat
+</p>
+
+<p>
+<input type="text" value="Doar citire" readonly>
+</p>
+
+<p>
+<input type="text" value="Indisponibil" disabled>
+</p>
+
+<p>
+<input type="submit" value="Salvează">
+</p>
+
+</fieldset>
+
+</form>
+
+<br>
+
+<center>
+<a href="https://www.atptour.com" href="#" target="_blank" name="linkATP" title="Site ATP">
+Vezi clasamentul ATP
+</a>
+</center>
+
+<p align="center">
+<span title="informatie">Aplicație demo pentru laborator HTML</span>
+</p>
+
+</body>
+</html>
