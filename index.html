@@ -1,37 +1,38 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
 
-<title title="Tennis Platform">Tennis Live Platform</title>
+<title title="Tennis Live Tracker">Tennis Live Tracker</title>
 
 <style>
 
 body{
-margin:0;
-font-family:Arial;
 background-image:url("https://images.unsplash.com/photo-1595433562696-1a6b4e4c8e3c");
 background-size:cover;
+background-position:center;
 background-attachment:fixed;
+font-family:Arial;
+margin:0;
 color:white;
 }
 
-header{
-background:rgba(0,0,0,0.9);
-padding:20px;
+.header{
+background:rgba(0,0,0,0.85);
+padding:25px;
 text-align:center;
-font-size:28px;
 }
 
-.container{
+.layout{
 display:flex;
-width:95%;
+width:90%;
 margin:auto;
 }
 
 .sidebar{
 width:20%;
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.75);
 padding:20px;
 }
 
@@ -44,7 +45,7 @@ padding:30px;
 .card{
 background:#111827;
 padding:20px;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 table{
@@ -77,43 +78,28 @@ color:white;
 cursor:pointer;
 }
 
-input,select,textarea{
-padding:6px;
-}
-
-.rank{
-margin-top:20px;
-}
-
 </style>
 
 <script>
 
-let seconds=0
-
-function timer(){
-
-seconds++
-
-document.getElementById("timer").innerText=seconds+" sec"
-
-}
-
-setInterval(timer,1000)
-
 function addMatch(){
 
-let p=document.getElementById("player").value
-let o=document.getElementById("opponent").value
+var p=document.getElementById("player").value
+var o=document.getElementById("opponent").value
 
-let table=document.getElementById("matches")
+var table=document.getElementById("matchTable")
 
-let row=table.insertRow()
+var row=table.insertRow()
 
-row.insertCell(0).innerHTML=p
-row.insertCell(1).innerHTML=o
-row.insertCell(2).innerHTML="0"
-row.insertCell(3).innerHTML="0"
+var c1=row.insertCell(0)
+var c2=row.insertCell(1)
+var c3=row.insertCell(2)
+var c4=row.insertCell(3)
+
+c1.innerHTML=p
+c2.innerHTML=o
+c3.innerHTML="0"
+c4.innerHTML="0"
 
 }
 
@@ -121,15 +107,20 @@ row.insertCell(3).innerHTML="0"
 
 </head>
 
-<body>
+<body bgcolor="#0f172a">
 
-<header>
+<div class="header">
 
-🎾 GLOBAL TENNIS LIVE PLATFORM
+<h1 align="center">🎾 Tennis Live Match Tracker</h1>
+<h2>Monitorizarea meciurilor de tenis</h2>
+<h3>Platformă demo</h3>
+<h4>Laborator HTML</h4>
+<h5>Universitate</h5>
+<h6>Aplicație web</h6>
 
-</header>
+</div>
 
-<div class="container">
+<div class="layout">
 
 <div class="sidebar">
 
@@ -137,7 +128,7 @@ row.insertCell(3).innerHTML="0"
 
 <ul>
 
-<li>ATP</li>
+<li>ATP Tour</li>
 <li>Wimbledon</li>
 <li>US Open</li>
 <li>Roland Garros</li>
@@ -145,7 +136,7 @@ row.insertCell(3).innerHTML="0"
 
 </ul>
 
-<h3>Top Players</h3>
+<h3>Top jucători</h3>
 
 <ul>
 
@@ -156,36 +147,57 @@ row.insertCell(3).innerHTML="0"
 
 </ul>
 
+<h3>Pași utilizare</h3>
+
+<ol start="1">
+
+<li>Vizualizează meciuri</li>
+<li>Adaugă rezultate</li>
+<li>Monitorizează scoruri</li>
+
+</ol>
+
 </div>
 
 <div class="main">
 
 <div class="card">
 
-<h2 align="center">Live Matches</h2>
-
 <p align="center">
 
-<strong>Tennis Live Platform</strong> este o aplicație web
-care permite monitorizarea meciurilor de tenis,
-afișarea scorurilor live și gestionarea meciurilor.
+<strong>Tennis Live Tracker</strong> este o aplicație web demonstrativă
+care permite utilizatorilor să urmărească meciuri de tenis,
+să vizualizeze scoruri și să adauge rezultate noi.
 
 <br><br>
 
-Platforma simulează un sistem similar cu LiveScore
-unde utilizatorii pot urmări meciuri,
-adăuga rezultate și vizualiza statistici.
+Aplicația simulează o platformă sportivă
+inspirată din site-uri precum LiveScore sau FlashScore.
+
+<br>
+
+<span title="informatie">Platformă demonstrativă pentru laborator</span>
 
 </p>
 
-<p align="center">
+</div>
 
-Match timer:
-<span id="timer">0 sec</span>
+<div class="card">
 
-</p>
+<center>
 
-<table border="1" id="matches">
+<h2>Live Matches</h2>
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
+width="350"
+height="200"
+alt="tenis"
+title="tenis">
+
+</center>
+
+<table border="1" width="100%" id="matchTable">
 
 <tr>
 
@@ -219,7 +231,7 @@ Match timer:
 
 <div class="card">
 
-<h2>Add Match</h2>
+<h2 align="center">Add Match</h2>
 
 <form name="tenisForm">
 
@@ -229,9 +241,15 @@ Match timer:
 
 <p>
 
-Player
+Player Name
 
-<input type="text" id="player" size="20" maxlength="30" value="Player name">
+<input
+type="text"
+name="player"
+id="player"
+size="20"
+maxlength="30"
+value="Player name">
 
 </p>
 
@@ -239,7 +257,12 @@ Player
 
 Opponent
 
-<input type="text" id="opponent" size="20" maxlength="30">
+<input
+type="text"
+name="opponent"
+id="opponent"
+size="20"
+maxlength="30">
 
 </p>
 
@@ -275,7 +298,11 @@ Surface
 
 Set score
 
-<input type="number" max="7" step="1" value="0">
+<input
+type="number"
+max="7"
+step="1"
+value="0">
 
 </p>
 
@@ -285,7 +312,10 @@ Comments
 
 <br>
 
-<textarea cols="40" rows="4">
+<textarea
+name="comentarii"
+cols="40"
+rows="4">
 
 Match analysis
 
@@ -313,7 +343,10 @@ Match analysis
 
 <p>
 
-<button type="button" onclick="addMatch()">Add Match</button>
+<input
+type="button"
+value="Add Match"
+onclick="addMatch()">
 
 </p>
 
@@ -323,11 +356,11 @@ Match analysis
 
 </div>
 
-<div class="card rank">
+<div class="card">
 
 <h2 align="center">ATP Ranking</h2>
 
-<table border="1">
+<table border="1" width="400">
 
 <tr>
 
@@ -337,28 +370,38 @@ Match analysis
 </tr>
 
 <tr>
-<td>1</td>
+
+<td align="center">1</td>
 <td>Novak Djokovic</td>
+
 </tr>
 
 <tr>
-<td>2</td>
+
+<td align="center">2</td>
 <td>Carlos Alcaraz</td>
+
 </tr>
 
 <tr>
-<td>3</td>
+
+<td align="center">3</td>
 <td>Jannik Sinner</td>
+
 </tr>
 
 <tr>
-<td>4</td>
+
+<td align="center">4</td>
 <td>Daniil Medvedev</td>
+
 </tr>
 
 <tr>
-<td>5</td>
+
+<td align="center">5</td>
 <td>Stefanos Tsitsipas</td>
+
 </tr>
 
 </table>
@@ -367,14 +410,13 @@ Match analysis
 
 <center>
 
-<br>
-
-<a href="https://www.atptour.com"
+<a
+href="https://www.atptour.com"
 target="_blank"
 name="linkATP"
 title="ATP ranking">
 
-Official ATP Website
+Vizitează site-ul oficial ATP
 
 </a>
 
@@ -383,49 +425,7 @@ Official ATP Website
 </div>
 
 </div>
-<div bgcolor="white">
 
-<h4 align="center">Example Section</h4>
-<h5>Demo</h5>
-<h6>Laboratory</h6>
-
-<p>
-<b>Acesta</b> este un exemplu <strong>pentru</strong> utilizarea tuturor tagurilor.
-<br>
-<span title="demo">Span text</span>
-</p>
-
-<ol start="1">
-<li>Primul element</li>
-<li>Al doilea element</li>
-</ol>
-
-<table border="1" width="300">
-
-<tr>
-<th>Col1</th>
-<th>Col2</th>
-</tr>
-
-<tr>
-<td align="center" valign="middle">A</td>
-<td>B</td>
-</tr>
-
-</table>
-
-<center>
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
-width="200"
-height="120"
-alt="tenis"
-title="tenis">
-
-</center>
-
-</div>
 </body>
 
 </html>
