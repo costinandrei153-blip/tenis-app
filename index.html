@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
 
-<title title="Aplicatie Tenis">Tenis Match Tracker</title>
+<title title="Tenis App">Live Tennis Tracker</title>
 
 <style>
 
 body{
-background-image:url("https://images.unsplash.com/photo-1542144582-1ba00456b5e3");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+background-color:#0f172a;
 font-family:Arial;
+color:white;
+margin:0;
 }
 
-.overlay{
-background-color:rgba(255,255,255,0.9);
+.header{
+background:#111827;
+padding:20px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+}
+
+.container{
 width:80%;
 margin:auto;
+background:#1f2937;
 padding:30px;
 }
 
 table{
-background:white;
+width:100%;
+border-collapse:collapse;
+background:#111827;
+color:white;
+}
+
+th{
+background:#22c55e;
+padding:10px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #374151;
+}
+
+.form-box{
+background:#111827;
+padding:20px;
+margin-top:30px;
 }
 
 </style>
@@ -32,79 +58,23 @@ background:white;
 
 <body>
 
-<div class="overlay">
+<div class="header">
 
-<center>
-
-<h1 title="Aplicatie tenis">🎾 Tenis Match Tracker</h1>
-<h3>Aplicație pentru urmărirea meciurilor de tenis</h3>
-<h5>Laborator Web</h5>
-
-</center>
-
-<p>
-
-Această aplicație web permite utilizatorilor să urmărească
-<strong>meciuri de tenis</strong>,
-să adauge <b>scoruri</b> și să vadă statistici despre jucători.
-<br>
-
-Scopul aplicației este să ajute fanii tenisului să urmărească turneele preferate.
-
-<span title="informatie">Platformă demo pentru laborator</span>
-
-</p>
-
-<div align="center">
-
-<h2>Funcționalități</h2>
-
-<ul>
-
-<li>Vizualizare jucători</li>
-<li>Adăugare meciuri</li>
-<li>Statistici scor</li>
-
-</ul>
-
-<h3>Pași pentru utilizare</h3>
-
-<ol start="1">
-
-<li>Adaugă jucătorii</li>
-<li>Introdu scorul meciului</li>
-<li>Salvează rezultatul</li>
-
-</ol>
+🎾 TENNIS LIVE MATCH TRACKER
 
 </div>
 
-<br>
+<div class="container">
 
-<center>
+<h2 align="center">Live Matches</h2>
 
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
-width="350"
-height="220"
-alt="tenis"
-title="Racheta tenis">
-
-</center>
-
-<br><br>
-
-<center>
-
-<h2>Tabel meciuri</h2>
-
-<table border="2" width="500" bgcolor="white">
+<table border="1">
 
 <tr>
 
-<th>Jucător</th>
-<th>Adversar</th>
-<th colspan="2">Scor</th>
+<th>Player</th>
+<th>Opponent</th>
+<th colspan="2">Score</th>
 
 </tr>
 
@@ -128,38 +98,47 @@ title="Racheta tenis">
 
 </table>
 
-</center>
+<br>
 
-<br><br>
+<div align="center">
 
-<center>
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
+width="400"
+height="220"
+alt="tenis"
+title="Tennis Court">
 
-<h2>Formular introducere meci</h2>
+</div>
 
-</center>
+<br>
+
+<div class="form-box">
+
+<h3 align="center">Add New Match</h3>
 
 <form name="tenisForm">
 
 <fieldset>
 
-<legend align="center">Adaugă meci nou</legend>
+<legend align="center">Match Details</legend>
 
 <p>
 
-Nume jucător:
+Player Name:
 
 <input
 type="text"
 name="player"
 size="20"
 maxlength="30"
-value="Introduce nume">
+value="Enter player">
 
 </p>
 
 <p>
 
-Adversar:
+Opponent:
 
 <input
 type="text"
@@ -171,7 +150,7 @@ maxlength="30">
 
 <p>
 
-Turneu:
+Tournament:
 
 <select name="turneu">
 
@@ -185,12 +164,12 @@ Turneu:
 
 <p>
 
-Suprafață teren:
+Surface:
 
 <select name="teren" multiple size="3">
 
-<option value="zgura">Zgură</option>
-<option value="iarba">Iarbă</option>
+<option value="clay">Clay</option>
+<option value="grass">Grass</option>
 <option value="hard">Hard</option>
 
 </select>
@@ -199,7 +178,7 @@ Suprafață teren:
 
 <p>
 
-Set 1 scor:
+Set score:
 
 <input
 type="number"
@@ -211,7 +190,7 @@ step="1">
 
 <p>
 
-Comentarii despre meci:
+Comments:
 
 <br>
 
@@ -220,7 +199,7 @@ name="comentarii"
 cols="40"
 rows="4">
 
-Scrie detalii despre meci
+Match notes...
 
 </textarea>
 
@@ -228,25 +207,19 @@ Scrie detalii despre meci
 
 <p>
 
-<input type="checkbox" checked> Meci finalizat
+<input type="checkbox" checked> Match finished
 
 </p>
 
 <p>
 
-<input
-type="text"
-value="Camp doar citire"
-readonly>
+<input type="text" value="Read only field" readonly>
 
 </p>
 
 <p>
 
-<input
-type="text"
-value="Camp dezactivat"
-disabled>
+<input type="text" value="Disabled field" disabled>
 
 </p>
 
@@ -254,8 +227,8 @@ disabled>
 
 <input
 type="button"
-value="Salvează meci"
-onclick="alert('Meci salvat cu succes!')">
+value="Save match"
+onclick="alert('Match saved!')">
 
 </p>
 
@@ -263,7 +236,9 @@ onclick="alert('Meci salvat cu succes!')">
 
 </form>
 
-<br><br>
+</div>
+
+<br>
 
 <center>
 
@@ -271,13 +246,23 @@ onclick="alert('Meci salvat cu succes!')">
 href="https://www.atptour.com"
 target="_blank"
 name="linkATP"
-title="Clasament ATP">
+title="ATP Ranking">
 
-Vezi clasamentul oficial ATP
+View ATP Ranking
 
 </a>
 
 </center>
+
+<br>
+
+<p align="center">
+
+<strong>Live Tennis Tracker</strong> platform
+<br>
+<span title="demo">Demo web application for laboratory</span>
+
+</p>
 
 </div>
 
