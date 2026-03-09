@@ -3,56 +3,59 @@
 
 <head>
 
-<title title="Tenis Tracker">Tennis Live Tracker</title>
+<title title="Tennis Platform">Tennis Live Platform</title>
 
 <style>
 
 body{
+margin:0;
+font-family:Arial;
 background-image:url("https://images.unsplash.com/photo-1595433562696-1a6b4e4c8e3c");
 background-size:cover;
-background-position:center;
 background-attachment:fixed;
-font-family:Arial;
-margin:0;
 color:white;
 }
 
-.header{
-background:rgba(0,0,0,0.85);
+header{
+background:rgba(0,0,0,0.9);
 padding:20px;
 text-align:center;
 font-size:28px;
-font-weight:bold;
 }
 
-.layout{
+.container{
 display:flex;
-width:90%;
+width:95%;
 margin:auto;
 }
 
 .sidebar{
 width:20%;
-background:rgba(0,0,0,0.75);
+background:rgba(0,0,0,0.8);
 padding:20px;
 }
 
 .main{
 width:80%;
-background:rgba(17,24,39,0.85);
+background:rgba(17,24,39,0.9);
 padding:30px;
+}
+
+.card{
+background:#111827;
+padding:20px;
+margin-bottom:20px;
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-background:#111827;
-color:white;
+background:#020617;
 }
 
 th{
-background:#22c55e;
-padding:12px;
+background:#16a34a;
+padding:10px;
 }
 
 td{
@@ -61,29 +64,72 @@ border-bottom:1px solid #374151;
 text-align:center;
 }
 
-.form-box{
-background:#111827;
-padding:20px;
-margin-top:30px;
+.live{
+color:red;
+font-weight:bold;
 }
 
-a{
-color:#22c55e;
+button{
+background:#16a34a;
+border:none;
+padding:10px;
+color:white;
+cursor:pointer;
+}
+
+input,select,textarea{
+padding:6px;
+}
+
+.rank{
+margin-top:20px;
 }
 
 </style>
+
+<script>
+
+let seconds=0
+
+function timer(){
+
+seconds++
+
+document.getElementById("timer").innerText=seconds+" sec"
+
+}
+
+setInterval(timer,1000)
+
+function addMatch(){
+
+let p=document.getElementById("player").value
+let o=document.getElementById("opponent").value
+
+let table=document.getElementById("matches")
+
+let row=table.insertRow()
+
+row.insertCell(0).innerHTML=p
+row.insertCell(1).innerHTML=o
+row.insertCell(2).innerHTML="0"
+row.insertCell(3).innerHTML="0"
+
+}
+
+</script>
 
 </head>
 
 <body>
 
-<div class="header">
+<header>
 
-🎾 TENNIS LIVE MATCH TRACKER
+🎾 GLOBAL TENNIS LIVE PLATFORM
 
-</div>
+</header>
 
-<div class="layout">
+<div class="container">
 
 <div class="sidebar">
 
@@ -91,7 +137,7 @@ color:#22c55e;
 
 <ul>
 
-<li>ATP Tour</li>
+<li>ATP</li>
 <li>Wimbledon</li>
 <li>US Open</li>
 <li>Roland Garros</li>
@@ -99,13 +145,13 @@ color:#22c55e;
 
 </ul>
 
-<h4>Jucători populari</h4>
+<h3>Top Players</h3>
 
 <ul>
 
-<li>Nadal</li>
 <li>Djokovic</li>
 <li>Alcaraz</li>
+<li>Sinner</li>
 <li>Medvedev</li>
 
 </ul>
@@ -114,29 +160,32 @@ color:#22c55e;
 
 <div class="main">
 
-<center>
+<div class="card">
 
-<h2 title="Live Matches">Live Matches</h2>
-
-</center>
+<h2 align="center">Live Matches</h2>
 
 <p align="center">
 
-<strong>Tennis Live Match Tracker</strong> este o aplicație web demonstrativă
-care permite utilizatorilor să urmărească meciuri de tenis,
-să vizualizeze scoruri și să adauge rezultate noi.
+<strong>Tennis Live Platform</strong> este o aplicație web
+care permite monitorizarea meciurilor de tenis,
+afișarea scorurilor live și gestionarea meciurilor.
 
 <br><br>
 
-Aplicația simulează o platformă sportivă unde pot fi afișate
-<span title="meciuri tenis">meciuri live sau programate</span>
-din turnee importante precum ATP, Wimbledon sau US Open.
+Platforma simulează un sistem similar cu LiveScore
+unde utilizatorii pot urmări meciuri,
+adăuga rezultate și vizualiza statistici.
 
 </p>
 
-<br>
+<p align="center">
 
-<table border="1">
+Match timer:
+<span id="timer">0 sec</span>
+
+</p>
+
+<table border="1" id="matches">
 
 <tr>
 
@@ -148,85 +197,61 @@ din turnee importante precum ATP, Wimbledon sau US Open.
 
 <tr>
 
-<td align="center" valign="middle">Nadal</td>
-<td align="center">Djokovic</td>
-<td>6</td>
+<td align="center" valign="middle">Djokovic <span class="live">LIVE</span></td>
+<td>Alcaraz</td>
 <td>4</td>
+<td>3</td>
 
 </tr>
 
 <tr>
 
-<td>Alcaraz</td>
+<td>Sinner</td>
 <td>Medvedev</td>
-<td>7</td>
-<td>5</td>
+<td>2</td>
+<td>2</td>
 
 </tr>
 
 </table>
 
-<br><br>
+</div>
 
-<center>
+<div class="card">
 
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
-width="400"
-height="230"
-alt="tenis"
-title="Tennis court">
-
-</center>
-
-<div class="form-box">
-
-<center>
-
-<h3>Add New Match</h3>
-
-</center>
+<h2>Add Match</h2>
 
 <form name="tenisForm">
 
 <fieldset>
 
-<legend align="center">Match Details</legend>
+<legend>Match Form</legend>
 
 <p>
 
-Player Name:
+Player
 
-<input
-type="text"
-name="player"
-size="20"
-maxlength="30"
-value="Enter player">
+<input type="text" id="player" size="20" maxlength="30" value="Player name">
 
 </p>
 
 <p>
 
-Opponent:
+Opponent
 
-<input
-type="text"
-name="opponent"
-size="20"
-maxlength="30">
+<input type="text" id="opponent" size="20" maxlength="30">
 
 </p>
 
 <p>
 
-Tournament:
+Tournament
 
 <select name="turneu">
 
-<option value="atp">ATP</option>
-<option value="wimbledon" selected>Wimbledon</option>
-<option value="usopen">US Open</option>
+<option value="ATP">ATP</option>
+<option value="Wimbledon" selected>Wimbledon</option>
+<option value="US Open">US Open</option>
 
 </select>
 
@@ -234,13 +259,13 @@ Tournament:
 
 <p>
 
-Surface:
+Surface
 
-<select name="teren" multiple size="3">
+<select multiple size="3">
 
-<option value="clay">Clay</option>
-<option value="grass">Grass</option>
-<option value="hard">Hard</option>
+<option>Clay</option>
+<option>Grass</option>
+<option>Hard</option>
 
 </select>
 
@@ -248,28 +273,21 @@ Surface:
 
 <p>
 
-Set score:
+Set score
 
-<input
-type="number"
-value="0"
-max="7"
-step="1">
+<input type="number" max="7" step="1" value="0">
 
 </p>
 
 <p>
 
-Comments:
+Comments
 
 <br>
 
-<textarea
-name="comentarii"
-cols="40"
-rows="4">
+<textarea cols="40" rows="4">
 
-Match notes...
+Match analysis
 
 </textarea>
 
@@ -283,22 +301,19 @@ Match notes...
 
 <p>
 
-<input type="text" value="Read only field" readonly>
+<input type="text" value="readonly field" readonly>
 
 </p>
 
 <p>
 
-<input type="text" value="Disabled field" disabled>
+<input type="text" value="disabled field" disabled>
 
 </p>
 
 <p>
 
-<input
-type="button"
-value="Save match"
-onclick="alert('Match saved successfully!')">
+<button type="button" onclick="addMatch()">Add Match</button>
 
 </p>
 
@@ -308,17 +323,58 @@ onclick="alert('Match saved successfully!')">
 
 </div>
 
-<br>
+<div class="card rank">
+
+<h2 align="center">ATP Ranking</h2>
+
+<table border="1">
+
+<tr>
+
+<th>Rank</th>
+<th>Player</th>
+
+</tr>
+
+<tr>
+<td>1</td>
+<td>Novak Djokovic</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Carlos Alcaraz</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Jannik Sinner</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Daniil Medvedev</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Stefanos Tsitsipas</td>
+</tr>
+
+</table>
+
+</div>
 
 <center>
 
-<a
-href="https://www.atptour.com"
+<br>
+
+<a href="https://www.atptour.com"
 target="_blank"
 name="linkATP"
-title="ATP Ranking">
+title="ATP ranking">
 
-View ATP Official Ranking
+Official ATP Website
 
 </a>
 
@@ -327,7 +383,49 @@ View ATP Official Ranking
 </div>
 
 </div>
+<div bgcolor="white">
 
+<h4 align="center">Example Section</h4>
+<h5>Demo</h5>
+<h6>Laboratory</h6>
+
+<p>
+<b>Acesta</b> este un exemplu <strong>pentru</strong> utilizarea tuturor tagurilor.
+<br>
+<span title="demo">Span text</span>
+</p>
+
+<ol start="1">
+<li>Primul element</li>
+<li>Al doilea element</li>
+</ol>
+
+<table border="1" width="300">
+
+<tr>
+<th>Col1</th>
+<th>Col2</th>
+</tr>
+
+<tr>
+<td align="center" valign="middle">A</td>
+<td>B</td>
+</tr>
+
+</table>
+
+<center>
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
+width="200"
+height="120"
+alt="tenis"
+title="tenis">
+
+</center>
+
+</div>
 </body>
 
 </html>
