@@ -30,7 +30,7 @@ padding:70px 20px;
 
 .layout{
 display:flex;
-width:90%;
+width:92%;
 margin:auto;
 gap:25px;
 }
@@ -74,6 +74,12 @@ color:red;
 font-weight:bold;
 }
 
+input,select,textarea{
+padding:8px;
+border-radius:6px;
+border:none;
+}
+
 button{
 background:#16a34a;
 padding:10px 18px;
@@ -83,9 +89,24 @@ color:white;
 cursor:pointer;
 }
 
+button:hover{
+background:#22c55e;
+}
+
 </style>
 
 <script>
+
+var seconds=0
+
+function timer(){
+
+seconds++
+document.getElementById("timer").innerHTML=seconds+" sec"
+
+}
+
+setInterval(timer,1000)
 
 function addMatch(){
 
@@ -96,15 +117,10 @@ var table=document.getElementById("matchTable")
 
 var row=table.insertRow()
 
-var c1=row.insertCell(0)
-var c2=row.insertCell(1)
-var c3=row.insertCell(2)
-var c4=row.insertCell(3)
-
-c1.innerHTML=p
-c2.innerHTML=o
-c3.innerHTML="0"
-c4.innerHTML="0"
+row.insertCell(0).innerHTML=p
+row.insertCell(1).innerHTML=o
+row.insertCell(2).innerHTML="0"
+row.insertCell(3).innerHTML="0"
 
 }
 
@@ -120,7 +136,7 @@ c4.innerHTML="0"
 
 <h1 align="center">🎾 Tennis Live Match Tracker</h1>
 <h2>Monitorizarea meciurilor de tenis</h2>
-<h3>Platformă demo</h3>
+<h3>Platformă demonstrativă</h3>
 <h4>Laborator HTML</h4>
 <h5>Universitate</h5>
 <h6>Aplicație web</h6>
@@ -173,15 +189,22 @@ c4.innerHTML="0"
 <p align="center">
 
 <strong>Tennis Live Tracker</strong> este o aplicație web demonstrativă
-care permite utilizatorilor să urmărească meciuri de tenis.
+care permite utilizatorilor să urmărească meciuri de tenis,
+să vizualizeze scoruri și să introducă rezultate noi.
 
 <br><br>
 
-Aplicația simulează o platformă inspirată din <b>LiveScore</b> sau <b>FlashScore</b>.
+Aplicația simulează o platformă sportivă inspirată din <b>LiveScore</b> sau <b>FlashScore</b>.
 
 <br>
 
 <span title="informatie">Platformă demonstrativă pentru laborator</span>
+
+</p>
+
+<p align="center">
+
+Match timer: <span id="timer">0 sec</span>
 
 </p>
 
