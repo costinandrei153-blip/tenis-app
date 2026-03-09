@@ -3,29 +3,43 @@
 
 <head>
 
-<title title="Tenis App">Live Tennis Tracker</title>
+<title title="Tenis Tracker">Tennis Live Tracker</title>
 
 <style>
 
 body{
-background-color:#0f172a;
+background-image:url("https://images.unsplash.com/photo-1595433562696-1a6b4e4c8e3c");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 font-family:Arial;
-color:white;
 margin:0;
+color:white;
 }
 
 .header{
-background:#111827;
+background:rgba(0,0,0,0.85);
 padding:20px;
 text-align:center;
 font-size:28px;
 font-weight:bold;
 }
 
-.container{
-width:80%;
+.layout{
+display:flex;
+width:90%;
 margin:auto;
-background:#1f2937;
+}
+
+.sidebar{
+width:20%;
+background:rgba(0,0,0,0.75);
+padding:20px;
+}
+
+.main{
+width:80%;
+background:rgba(17,24,39,0.85);
 padding:30px;
 }
 
@@ -38,18 +52,23 @@ color:white;
 
 th{
 background:#22c55e;
-padding:10px;
+padding:12px;
 }
 
 td{
 padding:10px;
 border-bottom:1px solid #374151;
+text-align:center;
 }
 
 .form-box{
 background:#111827;
 padding:20px;
 margin-top:30px;
+}
+
+a{
+color:#22c55e;
 }
 
 </style>
@@ -64,9 +83,58 @@ margin-top:30px;
 
 </div>
 
-<div class="container">
+<div class="layout">
 
-<h2 align="center">Live Matches</h2>
+<div class="sidebar">
+
+<h3>Turnee</h3>
+
+<ul>
+
+<li>ATP Tour</li>
+<li>Wimbledon</li>
+<li>US Open</li>
+<li>Roland Garros</li>
+<li>Australian Open</li>
+
+</ul>
+
+<h4>Jucători populari</h4>
+
+<ul>
+
+<li>Nadal</li>
+<li>Djokovic</li>
+<li>Alcaraz</li>
+<li>Medvedev</li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+<center>
+
+<h2 title="Live Matches">Live Matches</h2>
+
+</center>
+
+<p align="center">
+
+<strong>Tennis Live Match Tracker</strong> este o aplicație web demonstrativă
+care permite utilizatorilor să urmărească meciuri de tenis,
+să vizualizeze scoruri și să adauge rezultate noi.
+
+<br><br>
+
+Aplicația simulează o platformă sportivă unde pot fi afișate
+<span title="meciuri tenis">meciuri live sau programate</span>
+din turnee importante precum ATP, Wimbledon sau US Open.
+
+</p>
+
+<br>
 
 <table border="1">
 
@@ -82,40 +150,42 @@ margin-top:30px;
 
 <td align="center" valign="middle">Nadal</td>
 <td align="center">Djokovic</td>
-<td align="center">6</td>
-<td align="center">4</td>
+<td>6</td>
+<td>4</td>
 
 </tr>
 
 <tr>
 
-<td align="center">Alcaraz</td>
-<td align="center">Medvedev</td>
-<td align="center">7</td>
-<td align="center">5</td>
+<td>Alcaraz</td>
+<td>Medvedev</td>
+<td>7</td>
+<td>5</td>
 
 </tr>
 
 </table>
 
-<br>
+<br><br>
 
-<div align="center">
+<center>
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
 width="400"
-height="220"
+height="230"
 alt="tenis"
-title="Tennis Court">
+title="Tennis court">
 
-</div>
-
-<br>
+</center>
 
 <div class="form-box">
 
-<h3 align="center">Add New Match</h3>
+<center>
+
+<h3>Add New Match</h3>
+
+</center>
 
 <form name="tenisForm">
 
@@ -228,7 +298,7 @@ Match notes...
 <input
 type="button"
 value="Save match"
-onclick="alert('Match saved!')">
+onclick="alert('Match saved successfully!')">
 
 </p>
 
@@ -248,21 +318,13 @@ target="_blank"
 name="linkATP"
 title="ATP Ranking">
 
-View ATP Ranking
+View ATP Official Ranking
 
 </a>
 
 </center>
 
-<br>
-
-<p align="center">
-
-<strong>Live Tennis Tracker</strong> platform
-<br>
-<span title="demo">Demo web application for laboratory</span>
-
-</p>
+</div>
 
 </div>
 
